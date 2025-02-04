@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://${DB_url}:${DB_port}/${DB_name}
+    username: ${DB_username}
+    password: ${DB_password}
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
