@@ -1,4 +1,4 @@
-package studypj.boardpj.dto;
+package board.board.dto;
 
 import lombok.Getter;
 import lombok.Setter;
