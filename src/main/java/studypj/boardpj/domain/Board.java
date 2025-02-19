@@ -37,3 +37,4 @@ public class Board {
     private List<Comment> comments = new ArrayList<>();
 }
 
+

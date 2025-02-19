@@ -1,34 +1,44 @@
 package studypj.boardpj.domain;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
-@Getter @Setter     //Lombok 라이브러리
-@NoArgsConstructor  //기본 생성자 자동 생성해줌
+@NoArgsConstructor
 public class Comment {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; //테이블 고유 id
+    private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY) // N:1 관계면 무조건 지연로딩 설정
-    @JoinColumn(name = "post_id", nullable = false) // 조인해서 가져온 외래 키
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "board_id", nullable = false)
     private Board board;
 
-    @Column(nullable = false, length = 100) // NOT NULL, 최대 길이 100자
+    @Column(nullable = false, length = 100)
     private String userName;
 
-    @Column(nullable = false, columnDefinition = "TEXT") // NOT NULL, TEXT 타입
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String content;
 
-    @Column(nullable = false, updatable = false) // 생성 시간, 수정 불가
+    @Column(nullable = false, updatable = false)
     private LocalDateTime createTime;
 
-    @Column(nullable = false) // 수정 시간
+    @Column(nullable = false)
     private LocalDateTime updateTime;
+
+    @Builder
+    public Comment(Board board, String userName, String content, LocalDateTime createTime, LocalDateTime updateTime) {
+        this.board = board;
+        this.userName = userName;
+        this.content = content;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+    }
 }

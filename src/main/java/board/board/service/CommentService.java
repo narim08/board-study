@@ -1,11 +1,11 @@
-package board.board.service;
+package studypj.boardpj.service;
 
-import board.board.domain.Board;
-import board.board.domain.Comment;
-import board.board.dto.CommentRequestDTO;
-import board.board.dto.CommentResponseDTO;
-import board.board.repository.CommentRepository;
-import board.board.repository.BoardRepository;
+import studypj.boardpj.domain.Board;
+import studypj.boardpj.domain.Comment;
+import studypj.boardpj.dto.CommentRequestDTO;
+import studypj.boardpj.dto.CommentResponseDTO;
+import studypj.boardpj.repository.CommentRepository;
+import studypj.boardpj.repository.BoardRepository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
