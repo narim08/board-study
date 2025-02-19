@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>게시글 수정</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
+    <div class="container">
+        <h1>게시글 수정</h1>
+        <div class="edit-board-container">
+            <input type="text" id="title">
+            <textarea id="content"></textarea>
+            <div id="edit-board-btn">
+                <button type="submit" id="edit-btn">수정 완료</button>
+                <button type="button" id="cancel-btn">취소</button>
+            </div>
+        </div>
+    </div>
 
-
-<script src="/js/edit-board.js"></script>
+    <script src="/js/edit-board.js"></script>
 </body>
+
 </html>
